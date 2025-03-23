@@ -1,3 +1,6 @@
+/* Logo animation
+   This keyframe smoothly grows the logo from a small size (25px) to full size (475px) and fades it in.
+*/
 @keyframes growLogo {
   from {
     width: 25px;
@@ -8,14 +11,16 @@
     opacity: 1;
   }
 }
-
+/* Applies the growLogo animation on page load */
 #logo {
   width: 25px;
   opacity: 0;
   animation: growLogo 5s ease forwards;
 }
 
-
+/* Body styling:
+   Sets the body font and background pattern/color.
+*/
 body {
   font-family: "Poppins", serif;
   background-image: url('../images/concrete_seamless.png');
@@ -23,7 +28,9 @@ body {
   background-color: #f1f1f1;
 }
 
-
+/* Header styling:
+   Vertically aligns logo and nav items by default.
+*/
 header {
   display: flex;
   flex-direction: column;
@@ -35,7 +42,9 @@ header {
   padding: 10px;
 }
 
-
+/* Navigation styling:
+   Stack links vertically by default.
+*/
 .nav_links {
   display: flex;
   flex-direction:column;
@@ -43,15 +52,17 @@ header {
   align-items: center;
 }
 
-
+/* Style for each navigation link */
 .nav_item a {
   padding: 10px;
 }
 
+/* Color for visited nav links */
 .nav_links:visited {
   color: darkblue;
 }
 
+/* Hover/focus effects for nav links to ensure usability */
 .nav_item a:hover,
 .nav_item a:focus {
   color: #50C7C7;
@@ -59,6 +70,9 @@ header {
   text-decoration-style: dotted;
 }
 
+/* Card header styling:
+   Styles the top section of each pricing card.
+*/
 .card>header {
   background-color: #288088;
   border: 2px solid #45ADAD;
@@ -70,7 +84,9 @@ header {
   margin: 0;
 }
 
-
+/* Pricing:
+   Stacks cards vertically by default.
+*/
 .pricing {
   display: flex;
   flex-direction: column;
@@ -78,6 +94,7 @@ header {
   align-items: center;
 }
 
+/* Individual Card Styling */
 .card {
   background: white;
   background-size: auto;
@@ -90,27 +107,31 @@ header {
   border-radius: 50px 50px 0px 0px;
 }
 
+/* Gallery image styling */
 .gallery img {
   border: 10px solid #50C7C7;
   margin: 10px;
   width: 300px;
 }
 
-
+/* Gallery layout */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-
+/* Responsive Layout for 900px and + */
 @media screen and (min-width: 900px) {
+ /* Header becomes horizontal */
   header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
+ /* Nav links become horizontal */
 .nav_links {
     display: flex;
     flex-direction: row;
@@ -121,11 +142,15 @@ header {
     justify-content: center;
     align-items: center;
 }
+
+ /* Cards lay out in a row */
 .card {
     display: flex;
     flex-direction: column;
     flex-basis: 275px;
 }
+
+/* Smaller fixed card width */
 header {
     position: sticky;
     top: 0;
@@ -137,7 +162,7 @@ header {
 }
 }
 
-
+/* Accessibility: Reduce Motion */
 @media (prefers-reduced-motion: reduce) {
   #logo {
     animation: none;
@@ -146,7 +171,7 @@ header {
   }
 }
 
-
+/*Print styling:*/
 @media print {
   body {
       font-family: Arial, Helvetica, sans-serif;
@@ -174,7 +199,7 @@ header {
       display: none;
   }
 }
-
+/*  Accessibility: Skip Link */
 a.skip {
   background: white;
   left: 0;
@@ -185,6 +210,7 @@ a.skip {
   z-index: 1;
 }
 
+/*  Accessibility: Focus */
 a.skip:focus {
   top: 20px;
   color: black;
@@ -195,6 +221,7 @@ a.skip:focus {
   border: 2px solid black;
 }
 
+/*  font styling: */
 h1 {
   font-size: 2em;
   text-align: center;
@@ -211,6 +238,7 @@ p {
   padding: 0 30px;
 }
 
+/* Card Content Styling */
 .card > ul {
   list-style: none;
   padding-left: 5px;
@@ -222,10 +250,12 @@ p {
   position: relative;
 }
 
+/* Add thumbs-up emoji only after the second line in each list */
 .card > ul li:nth-of-type(2)::after {
   content: " 👍";
 }
 
+/* Button Styling */
 .card button {
   width: 90%;
   height: 40px;
@@ -237,12 +267,14 @@ p {
   font-size: 1em;
 }
 
+/* Large Price Heading in Card */
 .card h3 {
   font-size: 4em;
   color: white;
   text-align: center;
 }
 
+/* Footer Styling*/
 footer {
   background-color: black;
   color: white;
